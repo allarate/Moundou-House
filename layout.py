@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 import base64
+from datetime import datetime
 
 def layout(content_fn):
     if st.query_params.get("action") == "logout":
@@ -84,8 +85,9 @@ def layout(content_fn):
 
     content_fn()
 
-    st.markdown("""
+    date_jour = datetime.now().strftime("%d/%m/%Y")
+    st.markdown(f"""
         <div class="custom-footer">
-            &copy; 2025 Moundou House &mdash; Tous droits r&eacute;serv&eacute;s
+            &copy; Moundou House &mdash; {date_jour}
         </div>
     """, unsafe_allow_html=True)
