@@ -25,7 +25,7 @@ def show():
 
     col_l, col_c, col_r = st.columns([1, 2, 1])
     with col_c:
-        st.title("Moundou Home")
+        st.title("Moundou House")
         st.subheader("Connexion")
         st.markdown("<br>", unsafe_allow_html=True)
 
