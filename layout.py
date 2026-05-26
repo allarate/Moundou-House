@@ -86,6 +86,6 @@ def layout(content_fn):
 
     st.markdown("""
         <div class="custom-footer">
-            &copy; 2025 FaxUdm &mdash; Tous droits r&eacute;serv&eacute;s
+            &copy; 2025 Moundou House &mdash; Tous droits r&eacute;serv&eacute;s
         </div>
     """, unsafe_allow_html=True)

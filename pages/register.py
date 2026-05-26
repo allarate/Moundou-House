@@ -25,20 +25,20 @@ def show():
 
     col_l, col_c, col_r = st.columns([1, 2, 1])
     with col_c:
-        st.title("🏠 FaxUdm")
+        st.title("Moundou House")
         st.subheader("Créer un compte")
         st.markdown("<br>", unsafe_allow_html=True)
 
         with st.form("form_inscription"):
             col1, col2 = st.columns(2)
             with col1:
-                nom    = st.text_input("👤 Nom *")
+                nom    = st.text_input("Nom *")
             with col2:
-                prenom = st.text_input("👤 Prénom *")
+                prenom = st.text_input("Prénom *")
 
-            email     = st.text_input("📧 Email *")
-            password  = st.text_input("🔑 Mot de passe *", type="password")
-            password2 = st.text_input("🔑 Confirmer le mot de passe *", type="password")
+            email     = st.text_input("Email *")
+            password  = st.text_input("Mot de passe *", type="password")
+            password2 = st.text_input("Confirmer le mot de passe *", type="password")
 
             st.markdown("<br>", unsafe_allow_html=True)
             submitted = st.form_submit_button("S'inscrire", use_container_width=True)

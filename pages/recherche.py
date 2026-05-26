@@ -28,10 +28,10 @@ def show():
                 ville    = st.text_input("📍 Ville")
                 quartier = st.text_input("🗺 Quartier")
             with col2:
-                type_bien = st.selectbox("🏠 Type", ["Tous", "Appartement", "Villa", "Studio", "Duplex", "Chambre"])
-                chambres  = st.selectbox("🛏 Chambres", ["Toutes", "1", "2", "3", "4", "5", "6+"])
+                type_bien = st.selectbox("Type", ["Tous", "Appartement", "Villa", "Studio", "Duplex", "Chambre"])
+                chambres  = st.selectbox("Chambres", ["Toutes", "1", "2", "3", "4", "5", "6+"])
             st.markdown("<br>", unsafe_allow_html=True)
-            submitted = st.form_submit_button("🔍 Rechercher", use_container_width=True)
+            submitted = st.form_submit_button("Rechercher", use_container_width=True)
 
         if submitted:
             annonces = get_annonces_validees(
@@ -80,13 +80,13 @@ def show():
                     'margin-bottom:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.08);'
                     'max-width:700px;margin-left:auto;margin-right:auto;">'
                     + ('<div style="text-align:center;margin-bottom:0.8rem;">' + images_html + '</div>' if images_html else '')
-                    + '<h3 style="color:#1a1a2e;margin:0.5rem 0;text-align:center;">🏠 ' + a['titre'] + '</h3>'
+                    + '<h3 style="color:#1a1a2e;margin:0.5rem 0;text-align:center;">' + a['titre'] + '</h3>'
                     '<p style="color:#666;margin:0.2rem 0;text-align:center;">'
                     '📍 ' + a['ville'] + quartier_txt +
-                    ' &nbsp;|&nbsp; 🏠 ' + a['type_bien'] +
-                    ' &nbsp;|&nbsp; 🛏 ' + a['chambres'] + ' chambre(s)</p>'
+                    ' &nbsp;|&nbsp;  ' + a['type_bien'] +
+                    ' &nbsp;|&nbsp; ' + a['chambres'] + ' chambre(s)</p>'
                     '<p style="color:#4A90E2;font-size:1.2rem;font-weight:700;margin:0.5rem 0;text-align:center;">'
-                    '💰 ' + f"{int(a['prix']):,}" + ' FCFA / mois</p>'
+                    + f"{int(a['prix']):,}" + ' FCFA / mois</p>'
                     '<p style="color:#444;margin:0.3rem 0;text-align:center;">' + (a['description'] or '') + '</p>'
                     '<p style="color:#1a1a2e;font-weight:600;text-align:center;">📞 Contacter le service : ' + CONTACT_SERVICE + '</p>'
                     '<p style="color:#e74c3c;font-size:0.9rem;text-align:center;font-weight:600;">❤️ ' + str(nb_interets) + ' personne(s) intéressée(s)</p>'
